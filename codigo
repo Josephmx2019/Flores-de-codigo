@@ -1,0 +1,333 @@
+from turtle import *
+import colorsys
+import math
+
+def flor1():
+    speed(0.25)
+    bgcolor("black")
+
+    # Genera los petalos
+    goto(0, -40)
+    h = 0
+
+    for i in range(16):
+        for j in range(18):
+            c= colorsys.hsv_to_rgb(0.125 , 1, 1)
+            color(c)
+            rt(90)
+            circle(150-j*6, 90)
+            lt(90)
+            circle(150-j*6, 90)
+            rt(180)
+        circle(40, 24)
+
+    # Genera la parte centrall de la flor
+    goto(0, -40)
+    color("black") 
+    shape("turtle")
+    fillcolor("brown")
+    phi = 137.508 * (math.pi/ 180.0)
+
+    for i in range (200):
+        r = 4 * math.sqrt(i)
+        theta = i*phi
+        x = r * math.cos(theta)
+        y = r * math.sin(theta)
+        penup()
+        goto(x, y)
+        setheading(i * 137.508)
+        pendown()
+        stamp()
+
+    #Dibujar el tallo verde del girasol
+    penup()
+    goto(0,-100)
+    pendown()
+    color("green")
+    begin_fill()
+    rt(90)
+    fd(400)
+    lt(90)
+    fd(20)
+    lt(90)
+    fd(400)
+    lt(90)
+    fd(20)
+    end_fill()
+
+    done()
+
+def flor2():
+    # Configuration
+    bgcolor("black")
+    shape("turtle")
+    speed(0)
+    fillcolor("brown")
+
+    # Draw
+    penup()
+    goto(0, -200)
+    pendown()
+    setheading(90)
+    fillcolor("green")  # Cambia el color del tallo a verde
+    begin_fill()
+    forward(200)
+    left(90)
+    forward(20)
+    left(90)
+    forward(200)
+    end_fill()
+
+    # Colour
+    penup()
+    goto(0, -180)
+    fillcolor("#8B4513")  # Café más claro
+    begin_fill()
+    circle(0)
+    end_fill()
+
+    # Códe
+    phi = 137.508 * (math.pi / 180.0)
+    for i in range(160 + 40):
+        r = 4 * math.sqrt(i)
+        theta = i * phi
+        x = r * math.cos(theta)
+        y = r * math.sin(theta)
+        penup()
+        goto(x, y)
+        setheading(i * 137.508)
+        pendown()
+        if i < 160:
+            stamp()
+        else:
+            fillcolor("yellow")
+            begin_fill()
+            right(20)
+            forward(70)
+            left(40)
+            forward(70)
+            left(140)
+            forward(70)
+            left(40)
+            forward(70)
+            end_fill()
+
+    # Write
+    penup()
+    goto(0,300)  # position
+    color("White")  # Colour
+    write("¡PARA VOS MAMASITA!", align="center", font=("TIMES NEW ROMAN", 10, "bold"))
+    #Add text
+    penup()
+    goto(0,250)
+    color("White")
+    write("@Gonomantico", align="center", font=("TIMES NEW ROMAN", 4, "bold"))
+
+
+    # hide curs
+    hideturtle()
+
+    # close window
+    exitonclick()
+
+def flor3():
+    bgcolor("darkgrey")
+
+    penup()
+    left(90)
+    fd(200)
+    pendown()
+    right(90)
+
+    fillcolor("yellow")
+    begin_fill()
+    circle(10, 180)
+    circle(25, 110)
+    left(50)
+    circle(60, 45)
+    circle(20, 170)
+    right(24)
+    fd(30)
+    left(10)
+    circle(30, 110)
+    fd(20)
+    left(40)
+    circle(90, 70)
+    circle(30, 150)
+    right(30)
+    fd(15)
+    circle(80, 90)
+    left(15)
+    fd(45)
+    right(165)
+    fd(20)
+    left(155)
+    circle(150, 80)
+    left(50)
+    circle(150, 90)
+    end_fill()
+
+    left(150)
+    circle(-90, 70)
+    left(20)
+    circle(75, 105)
+    setheading(60)
+    circle(80, 98)
+    circle(-90, 40)
+
+    left(180)
+    circle(90, 40)
+    circle(-80, 98)
+    setheading(-83)
+
+    fd(30)
+    left(90)
+    fd(25)
+    left(45)
+    fillcolor("dark green")
+    begin_fill()
+    circle(-80, 90)
+    right(90)
+    circle(-80, 90)
+    end_fill()
+    right(135)
+    fd(60)
+    left(180)
+    fd(85)
+    left(90)
+    fd(80)
+
+    right(90)
+    right(45)
+    fillcolor("green")
+    begin_fill()
+    circle(80, 90)
+    left(90)
+    circle(80, 90)
+    end_fill()
+    left(135)
+    fd(60)
+    left(180)
+    fd(60)
+    right(90)
+    circle(200, 60)
+
+
+    # Add text
+    penup()
+    goto(0,400)  # Position
+    pendown()
+    color("black")  # Colour
+    write("¡PARA VOS MAMASITA!", align="center", font=("TIMES NEW ROMAN", 15, "italic"))
+    # Add text
+    penup()
+    goto(0,260) # Position
+    pendown()
+    color("dark red") #Colour
+    write("@gonomantico", align="center", font=("TIMES NEW ROMAN", 7, "italic"))
+    # Move the pencil
+    penup()
+    goto(330, 310)  # Cambia las coordenadas según tus preferencias
+    pendown()
+
+    # heart
+    fillcolor("red")
+    begin_fill()
+    pensize(1)
+
+    # Draw midle heart
+    left(140)
+    forward(40)
+    for _ in range(200):
+        right(1)
+        forward(0.3)
+
+    # Draw midle heart
+    left(120)
+    for _ in range(200):
+        right(1)
+        forward(0.3)
+
+    # Complete heart
+    forward(40)
+
+    # ending heart
+    end_fill()
+
+    # Close windows a click
+    exitonclick()
+
+def flor4():
+    #initializeTurtle(initial_speed=10)
+    #Agregar el texto a la cabecera
+    header_text=""
+    color("white") #Color del texto
+    penup()
+    goto(-180,250) #Posición del texto
+    pendown()
+    write(header_text,align="left",font=("Arial",12,"normal"))
+
+    speed(20)
+    bgcolor("black")
+    h=0
+    #Dibujar el tallo verde del girasol
+    penup()
+    goto(0,-100)
+    pendown()
+    color("green")
+    begin_fill()
+    rt(90)
+    fd(400)
+    lt(90)
+    fd(20)
+    lt(90)
+    fd(400)
+    lt(90)
+    fd(20)
+    end_fill()
+    #Dibujar el girasol
+    penup()
+    goto(0,0)
+    pendown()
+    for i in range (16):
+          for j in range (18):
+              color("yellow")#Todos los pétalos son amarillos
+              h+=0.005
+              rt(90)
+              circle(150-j*6,90)
+              lt(90)
+              circle(150-j*6,90)
+              rt(180)
+              circle(40,24)
+          
+    #Rellenar el centro
+    color("black") 
+    shape("turtle")
+    fillcolor("brown")
+    phi = 137.508 * (math.pi/ 180.0)
+
+    for i in range (200):
+        r = 4 * math.sqrt(i)
+        theta = i*phi
+        x = r * math.cos(theta)
+        y = r * math.sin(theta)
+        penup()
+        goto(x, y)
+        setheading(i * 137.508)
+        pendown()
+        stamp()
+
+    done()
+
+    
+
+
+print("Hola este programa dibuja diversas flores amarillas: ")
+opc=int(input("Ingresa una opción 1,2,3 o 4: "))
+if(opc==1):
+    flor1()
+elif(opc==2):
+    flor2()
+elif(opc==3):
+    flor3()
+elif(opc==4):
